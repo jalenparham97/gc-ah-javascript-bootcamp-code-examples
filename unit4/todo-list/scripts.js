@@ -13,7 +13,7 @@ function handleFormSubmit(event) {
   event.preventDefault();
   const todoInput = document.querySelector('.todo-input');
   // Add the todo to the todoListArray and to the DOM.
-  addTodoToArray(todoInput.value); // Passing the value from the todo input field as an argument to the addTodoToArray function.
+  addTodoToArrayAndList(todoInput.value); // Passing the value from the todo input field as an argument to the addTodoToArray function.
   // Clear the todo list form when the form is submitted.
   todoInput.value = '';
 }
