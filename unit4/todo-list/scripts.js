@@ -1,6 +1,3 @@
-// Our todo list Array.
-const todoListArray = [];
-
 const form = document.querySelector('#form');
 const todoList = document.querySelector('.todo-list');
 
@@ -13,7 +10,7 @@ function handleFormSubmit(event) {
   event.preventDefault();
   const todoInput = document.querySelector('.todo-input');
   // Add the todo to the todoListArray and to the DOM.
-  addTodoToArrayAndList(todoInput.value); // Passing the value from the todo input field as an argument to the addTodoToArray function.
+  addTodoToList(todoInput.value); // Passing the value from the todo input field as an argument to the addTodoToArray function.
   // Clear the todo list form when the form is submitted.
   todoInput.value = '';
 }
@@ -40,25 +37,25 @@ function createTodoItem(todo) {
 }
 
 // Function to add our new todo to the todoListArray and the todo list ul element.
-function addTodoToArrayAndList(todoValue) {
+function addTodoToList(todoValue) {
   // Creating a todo object from our todo value paramater.
   const todo = {
     id: randomId(),
     text: todoValue,
     completed: false,
   };
-  // Adding the todo obejct to the todo list array.
-  todoListArray.push(todo);
   // Creating a new todo item element using the createTodoItem function.
   const todoItemListElement = createTodoItem(todo);
   // Adding the todo item li element to the todo list ul element.
   todoList.appendChild(todoItemListElement);
-  console.log(todoListArray);
 }
 
 // The delete todo event handler function for when the user deletes a todo.
 function handleDeleteTodo(event) {
-  console.log(event.target.parentElement);
+  // Get the parent element of the delete button. This the li element that the button is in.
+  const todoListItem = event.target.parentElement;
+  // Remove the todo list item from the DOM
+  todoListItem.remove();
 }
 
 function randomId() {
