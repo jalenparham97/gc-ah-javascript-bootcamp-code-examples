@@ -30,34 +30,34 @@
 // PATCH - Update or partially modify data
 
 // Fetch requests
-// fetch('https://grandcircusco.github.io/demo-apis/donuts.json')
-//   // Promise is resolved
-//   .then((res) => res.json()) // Getting json response from the Response object
-//   .then((jsonData) => {
-//     // Create a ul element
-//     const donutList = document.createElement('ul');
-//     // console.log(jsonData.results);
+fetch('https://grandcircusco.github.io/demo-apis/donuts.json')
+  // Promise is resolved
+  .then((res) => res.json()) // Getting json response from the Response object
+  .then((jsonData) => {
+    // Create a ul element
+    const donutList = document.createElement('ul');
+    // console.log(jsonData.results);
 
-//     jsonData.results.forEach((donut) => {
-//       // Create an li element
-//       const li = document.createElement('li');
-//       // Set the inner text of the li
-//       li.innerText = donut.name;
-//       // Append the li elements to our donut list ul
-//       donutList.appendChild(li);
-//     });
+    jsonData.results.forEach((donut) => {
+      // Create an li element
+      const li = document.createElement('li');
+      // Set the inner text of the li
+      li.innerText = donut.name;
+      // Append the li elements to our donut list ul
+      donutList.appendChild(li);
+    });
 
-//     document.body.appendChild(donutList);
-//   })
-//   // Promise is rejected
-//   .catch((error) => console.log(error));
+    document.body.appendChild(donutList);
+  })
+  // Promise is rejected
+  .catch((error) => console.log(error));
 
-// fetch('https://swapi.dev/api/people', {
-//   // Fetch request configuration options.
-//   method: 'GET',
-// })
-//   .then((res) => res.json())
-//   .then((data) => console.log(data));
+fetch('https://swapi.dev/api/people', {
+  // Fetch request configuration options.
+  method: 'GET',
+})
+  .then((res) => res.json())
+  .then((data) => console.log(data));
 
 // GET request to the json place holder api to get the posts from the database.
 fetch('https://jsonplaceholder.typicode.com/posts')
