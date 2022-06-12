@@ -1,7 +1,6 @@
 // Functions
 
 function isEven(number = 4) {
-  // console.log(number);
   if (number % 2 === 0) {
     return true;
   } else {
