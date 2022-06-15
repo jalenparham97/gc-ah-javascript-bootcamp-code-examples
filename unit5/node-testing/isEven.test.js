@@ -2,10 +2,24 @@ const isEven = require('./isEven.js');
 
 describe('isEven.js', () => {
   test('Returns true if divisible by 2', () => {
-    expect(isEven(2)).toBe(true);
+    // Arrange
+    const number = 2;
+
+    // Act
+    const isEvenNumber = isEven(number);
+
+    // Assert
+    expect(isEvenNumber).toBe(true);
   });
 
   test('Return false if not divisible by 2', () => {
-    expect(isEven(5)).toBe(false);
+    // Arrange
+    const number = 5;
+
+    // Act
+    const isEvenNumber = isEven(number);
+
+    // Assert
+    expect(isEvenNumber).toBe(false);
   });
 });
