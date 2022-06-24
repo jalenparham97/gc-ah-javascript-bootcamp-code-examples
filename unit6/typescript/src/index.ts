@@ -174,6 +174,11 @@ class TeamPlayer extends Player {
   }
 }
 
+let playerClass: Player;
+
+playerClass = new Player('Jalen', 4);
+playerClass = new TeamPlayer('Jalen', 4, 'Oilers');
+
 const player = new Player('Jalen', 4);
 const player1 = new Player('Player 1', 1);
 const player2 = new Player('Player 2', 2);
