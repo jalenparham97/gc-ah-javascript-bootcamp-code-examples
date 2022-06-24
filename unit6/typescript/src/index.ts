@@ -23,16 +23,16 @@ function printCar(ourCar: Car): Car {
   return ourCar;
 }
 
-printCar(car);
+// printCar(car);
 
-print('Hello World Yay!');
-log('Hello World Super Yay!');
+// print('Hello World Yay!');
+// log('Hello World Super Yay!');
 
 const sum = add(2, 2);
-console.log(sum);
+// console.log(sum);
 
 const result = subtract(4, 2);
-console.log(result);
+// console.log(result);
 
 // Variable type anotations
 let age: number = 25;
@@ -138,3 +138,50 @@ if (letter !== null) {
 // Solution 4
 // Optional chainging operator
 // console.log(fruit?.length);
+
+// Classes
+class Player {
+  // protected name: string;
+  // protected jerseyNumber: number;
+
+  // constructor(name: string, jerseyNumber: number) {
+  //   this.name = name;
+  //   this.jerseyNumber = jerseyNumber;
+  // }
+
+  constructor(protected name: string, protected jerseyNumber: number) {}
+
+  // Methods
+  protected getName(): string {
+    return this.name;
+  }
+}
+class TeamPlayer extends Player {
+  teamName: string;
+
+  constructor(name: string, jerseyNumber: number, teamName: string) {
+    super(name, jerseyNumber);
+    this.teamName = teamName;
+  }
+
+  getName() {
+    return `${this.name} is really cool.`;
+  }
+
+  getTeam() {
+    // this.jerseyNumber = 5;
+    return `${super.getName()} plays for the ${this.teamName}`;
+  }
+}
+
+const player = new Player('Jalen', 4);
+const player1 = new Player('Player 1', 1);
+const player2 = new Player('Player 2', 2);
+
+const teamPlayer = new TeamPlayer('Jalen', 4, 'Oilers');
+
+console.log(teamPlayer.getTeam());
+console.log(teamPlayer.getName());
+
+// console.log(`${player1.getName()} vs ${player2.getName()}`);
+// console.log(player1.name, player1.jerseyNumber);
