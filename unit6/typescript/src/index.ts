@@ -190,3 +190,45 @@ console.log(teamPlayer.getName());
 
 // console.log(`${player1.getName()} vs ${player2.getName()}`);
 // console.log(player1.name, player1.jerseyNumber);
+
+// Methods on an inteface
+interface Animal {
+  name: string;
+  talk: () => string;
+  greet: (greeting: string) => void;
+}
+
+// When there is proporty on an object or class that is a function, it is called a method;
+const dog: Animal = {
+  name: 'Pablo',
+  talk() {
+    return 'Wolf wolf';
+  },
+  greet(greeting: string) {
+    console.log(`${this.talk()} ${greeting}, My name is ${this.name}!`);
+  },
+};
+
+class Dog implements Animal {
+  // This is the way you do it if you do not use the class modifier.
+  // name: string
+
+  // constructor(name: string) {
+  //   this.name = name;
+  // }
+
+  // Defines our property and sets it.
+  constructor(public name: string) {}
+
+  talk() {
+    return 'Wolf wolf';
+  }
+
+  greet(greeting: string) {
+    console.log(`${this.talk()} ${greeting}, My name is ${this.name}!`);
+  }
+}
+
+const pablo = new Dog('Pablo');
+
+pablo.greet('Hi');
