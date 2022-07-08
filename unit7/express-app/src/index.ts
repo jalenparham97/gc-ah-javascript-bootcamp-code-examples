@@ -3,6 +3,9 @@ import express, { Request, Response } from 'express';
 // Import the cors module
 import cors from 'cors';
 
+// Router Imports
+import { greetingRouter } from './routes/greeting-routes';
+
 // Create an instance of an express server
 const app = express();
 
@@ -16,9 +19,7 @@ app.get('/', (request: Request, response: Response) => {
   response.json('Hello World!');
 });
 
-app.get('/greeting', (req, res) => {
-  res.json({ greeting: 'Hello, Nice to meet you!' });
-});
+app.use('/greeting', greetingRouter);
 
 // Define a port
 const port = 3000;
