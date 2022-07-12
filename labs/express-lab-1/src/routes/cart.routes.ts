@@ -1,5 +1,5 @@
 import express from 'express';
-import { nanoid } from 'nanoid';
+import { nanoid } from 'nanoid'; // If you want to use nanoid you need to install version 3.3.4
 import { cartItems } from '../data/cart.data';
 import { CartItem } from '../types/cart.types';
 
