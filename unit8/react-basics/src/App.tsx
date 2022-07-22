@@ -1,6 +1,7 @@
 import { useState, Fragment } from 'react';
 import Greeting from './Greeting';
 import './App.css';
+import { Greeting as TGreeting } from './types';
 
 // function Greeting() {
 //   return <h1>Hello Class! We are learning React.</h1>;
@@ -35,10 +36,19 @@ function App() {
     addClass = 'alert';
   }
 
+  const greeting: TGreeting = {
+    message: 'Some message',
+    name: 'Jalen',
+  };
+
+  const votes = 2;
+
   // In the {} we can render our state variables and write javascript/typescript expressions.
   return (
     <>
-      <Greeting />
+      {/* <Greeting message={greeting.message} name={greeting.name} /> */}
+      <Greeting greeting={greeting} showAlternateMessage={true} />
+
       <div style={{ marginLeft: 100, marginTop: 20, display: 'flex', gap: 10 }}>
         <button onClick={decrementCount}>decrement</button>
         {/* <button onClick={(event) => setCount(count - 1)}>decrement</button> */}
@@ -52,7 +62,12 @@ function App() {
         >
           Some link to somewhere
         </a>
-        {isOnline && fullName === 'Jalen' && <p>Online</p>}
+        {/* {isOnline && fullName === 'Jalen' && <p>Online</p>} */}
+        {votes > 0 && (
+          <div>
+            <p>I have votes</p>
+          </div>
+        )}
         {/* {isOnline && <p>Online</p>}
         {!isOnline && <p>Not online</p>} */}
         {/* {isOnline ? <p>Online</p> : <p>Not Online</p>} */}
