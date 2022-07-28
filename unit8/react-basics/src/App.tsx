@@ -1,8 +1,9 @@
 import { useState, Fragment } from 'react';
 import { faker } from '@faker-js/faker';
 import Greeting from './Greeting';
-import './App.css';
 import { Greeting as TGreeting } from './types';
+import deskSetupImage from './images/desk-setup.jpg';
+import './App.css';
 
 // function Greeting() {
 //   return <h1>Hello Class! We are learning React.</h1>;
@@ -107,6 +108,22 @@ function App() {
     <>
       {/* <Greeting message={greeting.message} name={greeting.name} /> */}
       <Greeting greeting={greeting} showAlternateMessage={true} />
+
+      <img
+        src={deskSetupImage}
+        alt="Cool desk setup"
+        style={{ width: 500, height: 500, borderRadius: 5, marginRight: 40 }}
+        // width={200}
+        // height={100}
+      />
+
+      <img
+        src="https://images.unsplash.com/photo-1605379399843-5870eea9b74e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3298&q=80"
+        alt="Cool desk setup"
+        style={{ width: 500, height: 500, borderRadius: 5 }}
+        // width={200}
+        // height={100}
+      />
 
       <div style={{ marginLeft: 100, marginTop: 20, gap: 10 }}>
         <button style={{ marginRight: '10px' }} onClick={addVipUser}>
