@@ -7,6 +7,7 @@ interface TodoListProps {
 }
 
 export default function TodoList({ todoList, onDeleteTodo }: TodoListProps) {
+  // The map method is used to render a list of items in an array in our JSX.
   return (
     <div>
       {todoList.map((todo) => (
