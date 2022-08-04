@@ -1,0 +1,36 @@
+.post-form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.title-input,
+.thought-input {
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin-top: 5px;
+}
+
+label {
+  font-weight: 600;
+}
+
+.thought-input-container {
+  margin-top: 10px;
+}
+
+button[type='submit'] {
+  margin-top: 20px;
+  cursor: pointer;
+  padding: 10px;
+  font-size: 20px;
+  border-radius: 5px;
+  border: 2px solid black;
+  z-index: 1000;
+}
+
+.input {
+  display: flex;
+  flex-direction: column;
+}
