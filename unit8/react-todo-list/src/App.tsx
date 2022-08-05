@@ -2,6 +2,7 @@ import { useState } from 'react';
 import TodoForm from './components/TodoForm';
 import TodoList from './components/TodoList';
 import './App.css';
+import Card from './components/Card';
 
 export interface Todo {
   id: string;
@@ -45,10 +46,23 @@ function App() {
   return (
     <div className="App">
       <h1>Todo List</h1>
+      <Card title="Card 1 Title">
+        <h4>Hi Card 1</h4>
+      </Card>
+      <Card>
+        <h4>Hi Card 2</h4>
+      </Card>
+      <Card title="Card 3 Title">
+        <h4>Hi Card 3</h4>
+      </Card>
       {/* This how you would use the icon component after importing it */}
       {/* <IconTrash size={24} /> */}
-      <TodoForm onSubmit={handleSubmit} /> {/* Component */}
-      <TodoList todoList={todoList} onDeleteTodo={handleDeleteTodoItem} />
+      {/* <TodoForm onSubmit={handleSubmit} /> Component */}
+      <TodoForm />
+      {/* <TodoList todoList={todoList} onDeleteTodo={handleDeleteTodoItem}> */}
+      <TodoList>
+        <h2>This is todo list children</h2>
+      </TodoList>
       {/* Component */}
     </div>
   );

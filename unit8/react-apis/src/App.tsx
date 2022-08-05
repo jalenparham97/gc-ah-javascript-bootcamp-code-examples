@@ -6,11 +6,19 @@ import {
 } from './services/posts.service';
 import { Post } from './types';
 import './App.css';
+import { config } from './config';
 
 function App() {
   const [posts, setPosts] = useState<Post[]>([]);
   const [post, setPost] = useState<Post>();
   const [postId, setPostId] = useState('');
+
+  // console.log('dbURI: ', config.dbURI);
+  // console.log('apiKey: ', config.apiKey);
+
+  // useEffect(() => {
+  //   fetchAllPosts().then((response) => console.log(response.data));
+  // }, []);
 
   useEffect(() => {
     getAllPosts();
@@ -63,7 +71,7 @@ function App() {
       )}
       <ul>
         {posts.map((post) => (
-          <li>{post.title}</li>
+          <li key={post.id}>{post.title}</li>
         ))}
       </ul>
     </div>
