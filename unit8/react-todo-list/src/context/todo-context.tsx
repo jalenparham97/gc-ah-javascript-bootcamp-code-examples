@@ -3,15 +3,27 @@ import { Todo } from '../App';
 
 interface TodoContextModel {
   todoList: Todo[];
+  totalTodos: number;
   addTodo: (todo: Todo) => void;
   deleteTodo: (id: string) => void;
 }
 
-export const TodoContext = createContext<TodoContextModel>({
+const defaultContextValues: TodoContextModel = {
   todoList: [],
+  totalTodos: 0,
   addTodo: () => {},
   deleteTodo: () => {},
-});
+};
+
+export const TodoContext =
+  createContext<TodoContextModel>(defaultContextValues);
+
+// export const TodoContext = createContext<TodoContextModel>({
+//   todoList: [],
+//   totalTodos: 0,
+//   addTodo: () => {},
+//   deleteTodo: () => {},
+// });
 
 interface Props {
   children: React.ReactNode;
@@ -29,7 +41,9 @@ export function TodoContextProvider({ children }: Props) {
   }
 
   return (
-    <TodoContext.Provider value={{ todoList, addTodo, deleteTodo }}>
+    <TodoContext.Provider
+      value={{ todoList, addTodo, deleteTodo, totalTodos: todoList.length }}
+    >
       {children}
     </TodoContext.Provider>
   );

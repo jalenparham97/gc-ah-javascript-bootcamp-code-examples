@@ -10,9 +10,9 @@ interface TodoFormProps {
 
 // We consume our props in the parameter of our Component by destructuring them.
 // We can then use them within our component.
-export default function TodoForm({ onSubmit }: TodoFormProps) {
+export default function TodoForm({}: TodoFormProps) {
   const [todo, setTodo] = useState<Todo>({ id: '', text: '' });
-  const { addTodo } = useContext(TodoContext);
+  const { addTodo, totalTodos } = useContext(TodoContext);
 
   // React.ChangeEvent<HTMLInputElement> tells use we will get an event object specifically for the HTML input element.
   function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
